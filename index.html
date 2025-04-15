@@ -89,6 +89,28 @@
       right: 2px;
     }
 
+    .instagram-icon a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .instagram-icon a:hover .instagram-inner {
+        border-color: #666666;
+    }
+
+    .instagram-icon a:hover .instagram-inner::before {
+        border-color: #666666;
+    }
+
+    .instagram-icon a:hover .instagram-inner::after {
+        background-color: #666666;
+    }
+
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -164,8 +186,10 @@
         <a href="#">Contacts</a>
       </div>
       <div class="instagram-icon">
-        <div class="instagram-inner"></div>
-      </div>
+        <a href="https://www.instagram.com/halcyonyau/" target="_blank">
+          <div class="instagram-inner"></div>
+        </a>
+      </div>      
     </nav>
 
     <div class="gallery">
