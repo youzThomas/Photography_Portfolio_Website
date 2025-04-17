@@ -5,12 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Thomas You</title>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-/ckg1SUXYwB7xL96YyLj/jcYTxGGPZ1exDC3HqxyMqV3UegMwNltVwANHMLqC4sILnT8x53tTTKDnSt9Fnfx4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       font-family: 'Libre Baskerville', serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
       background-color: #fafafa;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      font-weight: 400;
+      position: relative;
+      transition: color 0.6s ease;
+    }
+
+    .nav-links a.active {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #666666;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .social-icons a {
+      color: #000;
+      font-size: 18px;
+      transition: color 0.6s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icons a:hover {
+      color: #666666;
+    }
+
+    .about-content {
+      margin-top: 80px;
+      max-width: 800px;
+      font-size: 18px;
+      line-height: 1.7;
       color: #333;
     }
 
@@ -19,34 +83,46 @@
       margin-bottom: 20px;
     }
 
-    p {
-      max-width: 700px;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 40px;
-      text-decoration: none;
-      font-size: 16px;
-      color: #000;
-      border-bottom: 1px solid #000;
-      transition: color 0.3s ease, border-color 0.3s ease;
-    }
-
-    a:hover {
-      color: #666;
-      border-color: #666;
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-top: 100px;
+      padding: 20px 0;
     }
   </style>
 </head>
 <body>
-  <h1>About Me</h1>
-  <p>
-    Hello! I'm Thomas You, a photographer and creative based between 2018 and 2025. This site showcases my curated work in street and cityscape photography, with a focus on storytelling through urban stillness and movement. Whether behind the lens or building digital portfolios like this one, I aim to craft thoughtful experiences that blend emotion and visual structure.
-  </p>
+  <div class="container">
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="index_home.html">Home</a>
+        <a href="#" class="active">About</a>
+        <a href="#">Works</a>
+        <a href="#">Contacts</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/halcyonyau/" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:halcyonyau@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </nav>
 
-  <a href="index.html">← Back to Home</a>
+    <div class="about-content">
+      <h1>About Me</h1>
+      <p>
+        I'm Thomas You, a visual storyteller passionate about capturing light, urban motion, and intimate stillness. 
+        This portfolio showcases work from 2018 to 2025 across street, cityscape, and documentary photography. 
+        Outside the frame, I design digital experiences and creative workflows to make ideas visual.
+      </p>
+    </div>
+
+    <footer>
+      2018–2025. ALL RIGHTS RESERVED BY THOMAS YOU
+    </footer>
+  </div>
 </body>
 </html>
