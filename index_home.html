@@ -139,14 +139,15 @@
     }
 
     .gallery {
-      column-count: 3;
-      column-gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
       margin-top: 50px;
     }
 
     .gallery-item {
-      break-inside: avoid;
-      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
     }
 
     .gallery-item img {
@@ -154,24 +155,20 @@
       height: auto;
       display: block;
       border-radius: 2px;
+      object-fit: cover;
       transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
+    /* Enlarge on hover */
     .gallery-item:hover img {
       transform: scale(1.05);
     }
 
-    @media (max-width: 1024px) {
-      .gallery {
-        column-count: 2;
-      }
+    /* Horizontal images span 2 columns */
+    .gallery-item.horizontal {
+      grid-column: span 2;
     }
 
-    @media (max-width: 600px) {
-      .gallery {
-        column-count: 1;
-      }
-    }
 
     .modal {
       display: none;
@@ -284,6 +281,15 @@
     function closeModal() {
       document.getElementById("modal").style.display = "none";
     }
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.onload = () => {
+        const aspect = img.naturalWidth / img.naturalHeight;
+        if (aspect > 1.2) {
+          img.parentElement.classList.add('horizontal');
+        }
+      };
+    });
   </script>
 </body>
 <footer style="text-align: center; font-size: 14px; color: #888; margin-top: 80px; padding: 20px 0;">
