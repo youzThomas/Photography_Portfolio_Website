@@ -150,25 +150,26 @@
       overflow: hidden;
     }
 
+    /* Default vertical image: height auto */
     .gallery-item img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 2px;
-      object-fit: cover;
       transition: transform 1s cubic-bezier(0.25, 0.1, 0.25, 1);
     }
 
-    /* Enlarge on hover */
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    /* Horizontal images span 2 columns */
+    /* Crop horizontal image to match vertical image height */
     .gallery-item.horizontal {
       grid-column: span 2;
     }
 
+    .gallery-item.horizontal img {
+      height: 100%;
+      aspect-ratio: 2 / 1; /* enforces horizontal layout shape */
+      object-fit: cover;
+      width: 100%;
+    }
 
     .modal {
       display: none;
@@ -249,16 +250,16 @@
         <img src="image_home/image_home_7.jpg" onclick="enlarge(this)">
       </div>
       <div class="gallery-item">
-        <img src="image_home/image_home_5.jpg" onclick="enlarge(this)">
-      </div>
-      <div class="gallery-item">
         <img src="image_home/image_home_6.jpg" onclick="enlarge(this)">
       </div>
       <div class="gallery-item">
-        <img src="image_home/image_home_4.jpg" onclick="enlarge(this)">
+        <img src="image_home/image_home_8.jpg" onclick="enlarge(this)">
       </div>
       <div class="gallery-item">
-        <img src="image_home/image_home_8.jpg" onclick="enlarge(this)">
+        <img src="image_home/image_home_9.jpg" onclick="enlarge(this)">
+      </div>
+      <div class="gallery-item">
+        <img src="image_home/image_home_5.jpg" onclick="enlarge(this)">
       </div>
     </div>
     
