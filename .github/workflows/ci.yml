@@ -1,4 +1,4 @@
-name: nobugs`commit
+name: scheduled maintenance
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
     - cron: "0 16 * * *"
     - cron: "0 22 * * *"
 jobs:
-  autogreen:
+  auto-debugging:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
